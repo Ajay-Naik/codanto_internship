@@ -1,0 +1,326 @@
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --light-text-color: #ffffff;
+    --container-shadow: 0 0 20px rgba(0,0,0,0.1);
+    --border-radius: 10px;
+    --transition-speed: 0.3s;
+    --font-family: 'Verdana', sans-serif;
+}
+
+/* Dark mode variable overrides */
+:root.dark {
+    --primary-color: #374151; /* gray-700 */
+    --secondary-color: #3b82f6; /* blue-500 */
+    --background-color: #111827; /* gray-900 */
+    --text-color: #f3f4f6; /* gray-100 */
+    --light-text-color: #f3f4f6; /* gray-100 */
+    --container-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px;
+    font-family: var(--font-family);
+    color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;              /* scrollbar width */
+  height: 10px;             /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;      /* Tailwind gray-200 */
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1d273c;      
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #111827;     
+}
+
+.dark ::-webkit-scrollbar-track {
+     background: #111827;     
+   }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    background: #3b82f6;     
+    border: 2px solid #111827;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #043d9a;      
+  }
+
+.resume-container {
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 900px;
+    width: 100%;
+    background: var(--light-text-color);
+    box-shadow: var(--container-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Left Section */
+.left-section {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    flex: 1 1 350px; 
+    padding: 30px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-color);
+    margin-bottom: 20px;
+    margin-left: 70px;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.left-section h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.left-section h4, .left-section p {
+    font-weight: normal;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+.section {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.section h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    transition: all var(--transition-speed) ease-in-out;
+    letter-spacing: 0.5px;
+}
+
+.section h2:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+.contact-info h2{
+    font-size: 24px;
+    padding-left: 15px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}   
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
+.download-section {
+    margin-top: 40px;
+}
+
+.download-section button {
+    cursor: pointer;
+    width: 207px;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: var(--secondary-color);
+    color: var(--light-text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background var(--transition-speed) ease-in-out;
+}
+
+.download-section button:hover {
+    background: #217dbb;
+}
+#themeToggle{
+    width: 207px;
+}
+#themeIcon{
+    width: 20px;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1 1 550px;
+    padding: 30px;
+}
+
+.right-section h2 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--secondary-color);
+    padding-left: 15px;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.right-section h2:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+.right-section p {
+    font-size: 1em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.right-section h3 {
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+.dark .right-section h3 {
+  color: #bec4cc;
+}
+
+.right-section h4 {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column;
+    }
+    .left-section, .right-section {
+        flex: 1 1 100%;
+    }
+    .left-section {
+        padding: 20px;
+    }
+    .right-section {
+        padding: 20px;
+    }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .resume-container {
+    display: block !important; 
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .left-section,
+  .right-section {
+    background: none !important;
+    color: black !important;
+    flex: none !important;
+    width: 100% !important;
+  }
+   .profile-pic{
+     margin-left: 250px;
+    }
+   .right-section{
+     margin-top: -40px;
+   }
+   .internship{
+     padding-top: 100px;
+   }
+
+  .left-section h1,
+  .left-section h2,
+  .left-section h3,
+  .left-section h4,
+  .left-section p,
+  .left-section li,
+  .left-section a,
+  .right-section h1,
+  .right-section h2,
+  .right-section h3,
+  .right-section h4,
+  .right-section p,
+  .right-section li {
+    color: black !important;
+  }
+      
+  .download-section,
+  #themeToggle,::-webkit-scrollbar {
+    display: none !important;
+  }
+}
